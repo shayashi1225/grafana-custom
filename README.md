@@ -64,8 +64,8 @@ grafana-custom   grafana-custom-grafana-custom.apps.cluster.example.com         
 ## Test
 ### Deploying zabbix(Appliance container image) on OpenShift
 ```sh
-$ oc adm policy add-scc-to-user anyuid -z default
 $ oc new-project zabbix
+$ oc adm policy add-scc-to-user anyuid -z default
 $ oc new-app registry.connect.redhat.com/zabbix/zabbix-appliance-44
 --> Found Docker image 3b1c1c9 (5 days old) from registry.connect.redhat.com for "registry.connect.redhat.com/zabbix/zabbix-appliance-44"
 
@@ -96,10 +96,14 @@ route.route.openshift.io/zabbix-appliance-44 exposed
 
 ### Integrating grafana and zabbix
 1. create user for accessing from grafana on zabbix
+
+
 ![](images/zabbix-createuser.png)
 ![](images/zabbix-createuser-permission.png)
 
 2. create datasource on grafana
+
+
 ![](images/grafana-ds.png)
 - URL: http://zabbix-appliance-44-zabbix.apps.example.com/api_jsonrpc.php
 - Zabbix API details: created user on zabbix and password
