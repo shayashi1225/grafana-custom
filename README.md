@@ -1,6 +1,6 @@
 # grafana-custom
 
-## deploying grafana with zabbix pulgin on OpenShift
+## Deploying grafana with zabbix pulgin on OpenShift
 1. git clone
 ```sh
 $ git clone https://github.com/shayashi1225/grafana-custom.git
@@ -56,3 +56,6 @@ $ oc get route
 NAME             HOST/PORT                                                                      PATH   SERVICES         PORT       TERMINATION   WILDCARD
 grafana-custom   grafana-custom-grafana-custom.apps.cluster-02de.02de.sandbox1255.opentlc.com          grafana-custom   3000-tcp                 None
 ```
+3. login to grafana (default password admin/admin)
+![](images/grafana-login.png)
+![](images/grafana-zabbix.png)
