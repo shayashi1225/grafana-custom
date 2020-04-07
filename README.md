@@ -59,3 +59,50 @@ grafana-custom   grafana-custom-grafana-custom.apps.cluster.example.com         
 3. access URL exposed by Openshift route and login to grafana (default password admin/admin)
 ![](images/grafana-login.png)
 ![](images/grafana-zabbix.png)
+
+
+## Test
+### Deploying zabbix(Appliance container image) on OpenShift
+```sh
+$ oc adm policy add-scc-to-user anyuid -z default
+$ oc new-project zabbix
+$ oc new-app registry.connect.redhat.com/zabbix/zabbix-appliance-44
+--> Found Docker image 3b1c1c9 (5 days old) from registry.connect.redhat.com for "registry.connect.redhat.com/zabbix/zabbix-appliance-44"
+
+    Zabbix Appliance 
+    ---------------- 
+    Zabbix appliance with MySQL database support and Nginx web-server
+
+    Tags: zabbix, zabbix-appliance, mysql, nginx
+
+    * An image stream tag will be created as "zabbix-appliance-44:latest" that will track this image
+    * This image will be deployed in deployment config "zabbix-appliance-44"
+    * Ports 10051/tcp, 443/tcp, 80/tcp will be load balanced by service "zabbix-appliance-44"
+      * Other containers can access this service through the hostname "zabbix-appliance-44"
+    * This image declares volumes and will default to use non-persistent, host-local storage.
+      You can add persistent volumes later by running 'oc set volume dc/zabbix-appliance-44 --add ...'
+
+--> Creating resources ...
+    imagestream.image.openshift.io "zabbix-appliance-44" created
+    deploymentconfig.apps.openshift.io "zabbix-appliance-44" created
+    service "zabbix-appliance-44" created
+--> Success
+    Application is not exposed. You can expose services to the outside world by executing one or more of the commands below:
+     'oc expose svc/zabbix-appliance-44' 
+    Run 'oc status' to view your app.
+$ oc expose svc/zabbix-appliance-44
+route.route.openshift.io/zabbix-appliance-44 exposed
+```
+
+### Integrating grafana and zabbix
+1. create user for accessing from grafana on zabbix
+![](images/zabbix-createuser.png)
+![](images/zabbix-createuser-permission.png)
+
+2. create datasource on grafana
+![](images/grafana-ds.png)
+- URL: http://zabbix-appliance-44-zabbix.apps.example.com/api_jsonrpc.php
+- Zabbix API details: created user on zabbix and password
+
+3. create dashborad using data from zabbix
+![](images/grafana-dashboard-sample.png)
