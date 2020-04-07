@@ -1,0 +1,29 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: grafana-custom
+  namespace: grafana-custom
+  labels:
+    application: grafana-custom
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'grafana-custom:latest'
+  resources: {}
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: DockerImage
+        name: grafana/grafana
+  postCommit: {}
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/shayashi1225/grafana-custom.git'
+  triggers: []
+  runPolicy: Serial
