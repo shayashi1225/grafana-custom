@@ -5,7 +5,7 @@ LABEL io.k8s.description="Grafana custom on OpenShift" \
       io.openshift.tags="grafana-custom"
 
 ENV GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource,alexanderzobnin-zabbix-app
-ENV GF_plugins_allow_loading_unsigned_plugins=alexanderzobnin-zabbix-datasource
+ENV GF_PLUGINS_ALLOW_LOADING_UNSIGHNED_PLUGINS=alexanderzobnin-zabbix-datasource
 
 EXPOSE 3000
 
