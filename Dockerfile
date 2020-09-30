@@ -1,4 +1,4 @@
-FROM grafana/grafana:6.7.4
+FROM grafana/grafana:6.7.2
 
 LABEL io.k8s.description="Grafana custom on OpenShift" \
       io.k8s.display-name="Grafana Custom" \
