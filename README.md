@@ -95,7 +95,7 @@ route.route.openshift.io/zabbix-appliance-44 exposed
 ```
 
 ### Integrating grafana and zabbix
-1. create user for accessing from grafana on zabbix
+1. create user for accessing from grafana on zabbix (default user:Admin / password:zabbix)
 
 
 ![](images/zabbix-createuser.png)
