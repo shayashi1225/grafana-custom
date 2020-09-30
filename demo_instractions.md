@@ -300,4 +300,6 @@ item2は、Zabbixへ連携したいメトリクスを必要な分だけ定義し
 #### 5-4. Zabbix上でPrometeusから取得したデータを表示する
 ![zabbix_display_graph](images/zabbix_display_graph.png)
 
-
+### おまけ
+Grafanaでの参照
+![grafana_display_zabbix_data](images/grafana_display_zabbix_data.png)
