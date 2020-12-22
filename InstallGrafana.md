@@ -4,7 +4,7 @@
 ### 4.1 Deploying grafana with zabbix pulgin on OpenShift
 1. git clone
 ```sh
-$ git clone https://github.com/shayashi1225/grafana-custom.git
+$ git clone https://github.com/shayashi1225/zabbix-grafana-demo.git
 ```
 2. Deploy grafana on Openshift(4.3.1)
 ```sh
