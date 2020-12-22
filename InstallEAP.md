@@ -147,4 +147,4 @@ Host/Port (tcp-9404-jmx.XXXX.openshiftworkshop.com) をブラウザ上からア�
 
 > 今回のDemoでは、このデータへZabbixからアクセスする
 
-[トップへ戻る](Readme.md)
+[トップへ戻る](README.md)

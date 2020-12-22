@@ -39,4 +39,4 @@ item2は、Zabbixへ連携したいメトリクスを必要な分だけ定義し
 ![zabbix_display_graph](images/zabbix_display_graph.png)
 
 
-[トップへ戻る](Readme.md)
+[トップへ戻る](README.md)

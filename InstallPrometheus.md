@@ -72,4 +72,4 @@ $ oc get po -n jmx-monitor-<User_ID>
 NAME                                   READY   STATUS    RESTARTS   AGE
 prometheus-operator-7cf7d5f74b-r4qmd   1/1     Running   0          16m
 ```
-[トップへ戻る](Readme.md)
+[トップへ戻る](README.md)

@@ -79,4 +79,4 @@ grafana-custom   grafana-custom-grafana-custom.apps.cluster.example.com         
 3. create dashborad using data from zabbix
 ![](images/grafana-dashboard-sample.png)
 
-[トップへ戻る](Readme.md)
+[トップへ戻る](README.md)
